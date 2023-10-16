@@ -102,7 +102,7 @@
     <div class="container mt-4">
       <div class="card">
         <div class="card-header">
-          <h5>Jumlah Rumah Sakit</h5>
+          <h5>Data Kemisikinan di Eks Karisidenan Surakarta</h5>
         </div>
         <div class="card-body">
           <div id="chart"></div>
@@ -167,89 +167,39 @@
 
     <script>
       var options = {
-        series: [
+        series: [347520, 361922, 383030],
+        chart: {
+          type: "donut",
+          width: 500,
+        },
+        series: [100.59, 104.82, 97.18],
+        chart: {
+          type: "donut",
+          width: 500,
+        },
+        series: [10.18, 10.62, 9.82],
+        chart: {
+          type: "donut",
+          width: 500,
+        },
+        responsive: [
           {
-            data: [
-              0, 0, 0, 0, 0, 0, 3, 2, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0,
-            ],
+            breakpoint: 480,
+            options: {
+              chart: {
+                width: 200,
+              },
+              legend: {
+                position: "bottom",
+              },
+            },
           },
         ],
-        chart: {
-          type: "bar",
-          height: 350,
-        },
-        annotations: {
-          xaxis: [
-            {
-              x: 500,
-              borderColor: "#00E396",
-              label: {
-                borderColor: "#00E396",
-                style: {
-                  color: "#fff",
-                  background: "#00E396",
-                },
-                text: "",
-              },
-            },
-          ],
-          yaxis: [
-            {
-              y: "",
-              y2: "",
-              label: {
-                text: "Jumlah Rumah Sakit",
-              },
-            },
-          ],
-        },
-        plotOptions: {
-          bar: {
-            horizontal: true,
-          },
-        },
-        dataLabels: {
-          enabled: true,
-        },
-        xaxis: {
-          categories: [
-            "Selo",
-            "Ampel",
-            "Gladagsar",
-            "Cepogo",
-            "Musuk",
-            "Tamansari",
-            "Boyolali",
-            "Mojosongo",
-            "Teras",
-            "Sawit",
-            "Banyudono",
-            "Sambi",
-            "Ngemplak",
-            "Nogosari",
-            "Simo",
-            "Karanggede",
-            "Klego",
-            "Andong",
-            "Kemusu",
-            "Wonosegoro",
-            "Wonosamudro",
-            "Juwangi",
-          ],
-          grid: {
-            xaxis: {
-              lines: {
-                show: true,
-              },
-            },
-          },
-          yaxis: {
-            reversed: true,
-            axisTicks: {
-              show: true,
-            },
-          },
-        },
+        labels: [
+          "Garis Kemiskinan",
+          "Jumlah Penduduk Miskin",
+          "Presentase Penduduk Miskin",
+        ],
       };
 
       var chart = new ApexCharts(document.querySelector("#chart"), options);

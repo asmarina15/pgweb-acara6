@@ -102,7 +102,7 @@
     <div class="container mt-4">
       <div class="card">
         <div class="card-header">
-          <h5>Jumlah Rumah Sakit</h5>
+          <h5>Jumlah Desa</h5>
         </div>
         <div class="card-body">
           <div id="chart"></div>
@@ -168,88 +168,55 @@
     <script>
       var options = {
         series: [
-          {
-            data: [
-              0, 0, 0, 0, 0, 0, 3, 2, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0,
-            ],
-          },
+          10, 10, 10, 15, 10, 10, 9, 13, 13, 12, 15, 16, 12, 13, 13, 16, 13, 16,
+          10, 11, 10, 10,
         ],
         chart: {
-          type: "bar",
-          height: 350,
+          type: "polarArea",
         },
-        annotations: {
-          xaxis: [
-            {
-              x: 500,
-              borderColor: "#00E396",
-              label: {
-                borderColor: "#00E396",
-                style: {
-                  color: "#fff",
-                  background: "#00E396",
-                },
-                text: "",
+        stroke: {
+          colors: ["#fff"],
+        },
+        fill: {
+          opacity: 0.8,
+        },
+        responsive: [
+          {
+            breakpoint: 480,
+            options: {
+              chart: {
+                width: 200,
               },
-            },
-          ],
-          yaxis: [
-            {
-              y: "",
-              y2: "",
-              label: {
-                text: "Jumlah Rumah Sakit",
-              },
-            },
-          ],
-        },
-        plotOptions: {
-          bar: {
-            horizontal: true,
-          },
-        },
-        dataLabels: {
-          enabled: true,
-        },
-        xaxis: {
-          categories: [
-            "Selo",
-            "Ampel",
-            "Gladagsar",
-            "Cepogo",
-            "Musuk",
-            "Tamansari",
-            "Boyolali",
-            "Mojosongo",
-            "Teras",
-            "Sawit",
-            "Banyudono",
-            "Sambi",
-            "Ngemplak",
-            "Nogosari",
-            "Simo",
-            "Karanggede",
-            "Klego",
-            "Andong",
-            "Kemusu",
-            "Wonosegoro",
-            "Wonosamudro",
-            "Juwangi",
-          ],
-          grid: {
-            xaxis: {
-              lines: {
-                show: true,
+              legend: {
+                position: "bottom",
               },
             },
           },
-          yaxis: {
-            reversed: true,
-            axisTicks: {
-              show: true,
-            },
-          },
-        },
+        ],
+        labels: [
+          "Selo",
+          "Ampel",
+          "Gladagsar",
+          "Cepogo",
+          "Musuk",
+          "Tamansari",
+          "Boyolali",
+          "Mojosongo",
+          "Teras",
+          "Sawit",
+          "Banyudono",
+          "Sambi",
+          "Ngemplak",
+          "Nogosari",
+          "Simo",
+          "Karanggede",
+          "Klego",
+          "Andong",
+          "Kemusu",
+          "Wonosegoro",
+          "Wonosamudro",
+          "Juwangi",
+        ],
       };
 
       var chart = new ApexCharts(document.querySelector("#chart"), options);
